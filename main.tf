@@ -15,6 +15,16 @@ resource "aws_s3_bucket" "s3-billing-03" {
 }
 
 
+resource "aws_s3_bucket_server_side_encryption_configuration" "s3-billing-03" {
+  bucket = aws_s3_bucket.s3-billing-03.bucket
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm     = "AES256"
+    }
+}
+
+
 resource "aws_s3_bucket" "s3-billing-03_log_bucket" {
   bucket = "s3-billing-03-log-bucket"
 }
