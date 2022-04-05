@@ -10,3 +10,11 @@ resource "aws_s3_bucket" "s3-billing-02" {
         purpose = "Terraform testing"
     }
 }
+
+resource "aws_s3_bucket" "s3-billing-03" {
+    bucket = "terraform-s3-billing-03"
+    tags = {
+        creator = "jpummill"
+        purpose = "Terraform testing"
+    }
+}
